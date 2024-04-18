@@ -24,11 +24,11 @@ This project is an exercise in using Apache Kafka and Confluent technology, alon
 
 This uses a data warehouse, includes multiple transformations and ingestion steps with a raw and refined dataset in BigQuery, in the cloud using streaming data with Kafka/Confluent and instructions for reproducing are below.
 
-Potential future updates include containerizing the whole process, adding in airflow for orchestration, and creating proper unit tests for the process.
+Potential future updates include containerizing the whole process, adding in airflow for orchestration, changing from Kafka to the reddit package in Python for costs savings, and creating proper unit tests for the process.
 
 # Data Architecture
 
-![Example Image](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/architecture_diagram.png)
+![Architecture Image](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/architecture_diagram.png)
 
 ## Architecture Steps
 
@@ -189,3 +189,7 @@ This code is very similar to the code we see in collectparquet, except the filte
 ### transform_time_series.py
 
 Also a simple script that aggregates the number of columns per hour from the Article_Data table. For this to run daily, a time filter should be put on the BigQuery query based on the current datetime.
+
+### deleteparquet.py
+
+While there are some lifecycle rules that could do this in cloud storage, I opted to create a script that gets rid of parquet files more than 10 days old. After awhile, the number of parquet files can become staggering and add to costs.
