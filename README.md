@@ -63,7 +63,12 @@ Once a day, this script will take the basic data from each article and aggregate
 
 ### 6. Looker Studio
 
-Highlights every 15 minutes (assuming that data was being pushed that often, which it isn't due to expense, but the principal stands) and highlights the most recent articles *and* the overall trend of number of articles per hour since the data has been being collected for *two tiles* of information.
+Highlights every 15 minutes (assuming that data was being pushed that often, which it isn't due to expense, but the principal stands) and highlights the most recent articles *and* the overall trend of number of articles per hour since the data has been being collected for *two tiles* of information. 
+
+Here's a snapshot of that vizualization:
+
+![Create_API_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/DataVizualization.png)
+
 
 # How to Re-create this Project
 
