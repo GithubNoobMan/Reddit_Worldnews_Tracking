@@ -10,5 +10,5 @@ This project is an exercise in using Apache Kafka and Confluent technology, alon
 
 # Data Architecture
 
-![Example Image](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/my_diagram.png)
+![Example Image](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/architecture_diagram.png)
 
