@@ -2,7 +2,9 @@
 A project to pull in and ingest reddit worldnews new articles
 
 # Project Description
-Reddit is the host of thousands of apps that enable users to see information in a convenient format to what it is that they are interested in. In this case, we're pulling in the newest articles so that a user can see news as soon as it's available. The project will keep track also of the hourly trend of how many articles are produced in the subreddit of worldnews to showcase if there is any outlier behavior in terms of the aggregate number of articles that are being produced. Over time, trends and spikes could be seen as data is aggregated over an extended period of time (years, probably).
+Reddit is the host of thousands of apps that enable users to see information in a convenient format to what it is that they are interested in. 
+
+We're pulling in the newest articles so a user can see news as soon as it's available. The project will keep track also of the hourly trend of how many articles are produced in reddit/worldnews to showcase if there is any outlier behavior in terms of the aggregate number of articles. Over time, trends and spikes could be seen as data is aggregated over an extended period of time (years, probably).
 
 This code includes proper and continual logging as a feature of the consumer code. These logs get stored on a regular updated basis, with info and error messages. When a failure occurs, before the process terminates, the logs are updated to ensure that all errors are logged properly.
 
