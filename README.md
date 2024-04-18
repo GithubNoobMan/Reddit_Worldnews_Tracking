@@ -20,7 +20,7 @@ Potential future updates include containerizing the whole process, adding in air
 
 ## Architecture Steps
 
-More detail will follow, but this is the basic steps. This project is created entirely in the cloud.
+More detail in later sections, but this is the basic architecture. *This project is created entirely in the cloud.*
 
 ### 1. Reddit API
 
