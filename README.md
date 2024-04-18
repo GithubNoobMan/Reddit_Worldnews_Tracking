@@ -103,14 +103,14 @@ Start the connector running and it should start collecting data. Note that it so
 
 Have a VM set up with Anaconda Python, VS Code with the SSH extension installed, and th-Create a VM in GCP
 
--Create an SSH key on your personal computer in a terminal.
--Share the public key with the VM by going to metadata settings and adding the public key.
--Create a config file to use to tunnel into the VM in VS Code## 4. Start up the consumer in your virtual machine.
--Create a role that allows you to pass data to and from Google Storage and BigQuery and download the json credentials to an appropriate place in your VM.
+#### Create an SSH key on your personal computer in a terminal.
+#### Share the public key with the VM by going to metadata settings and adding the public key.
+#### Create a config file to use to tunnel into the VM in VS Code## 4. Start up the consumer in your virtual machine.
+#### Create a role that allows you to pass data to and from Google Storage and BigQuery and download the json credentials to an appropriate place in your VM.
 
 ## 4. Start the consumer in the VM
 
--After downloading all files in the project to your VM, run the following command:
+#### After downloading all files in the project to your VM, run the following command:
 
 nohup python consumer.py configuration.ini &
 
@@ -132,10 +132,10 @@ This script will create or append to an already created table.
 
 ## 6. Create Looker Studio Vizualizations
 
--Configure and connect Looker Studio to BigQuery 
--Bring in the two data tables Article_Data and Aricle_Data_Time_Series
--Create a line graph and sort the articles by recency. 
--Update the frequency in the settings to every 15 minutes for refreshing the data.
+#### Configure and connect Looker Studio to BigQuery 
+#### Bring in the two data tables Article_Data and Aricle_Data_Time_Series
+#### Create a line graph and sort the articles by recency. 
+#### Update the frequency in the settings to every 15 minutes for refreshing the data.
 
 # Relevant Features of Code
 
