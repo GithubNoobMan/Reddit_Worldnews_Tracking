@@ -107,20 +107,21 @@ You can choose one partition because we are using a simple process with only one
 
 Start the connector running and it should start collecting data. Note that it sometimes returns a failure intermittently due to too many requests to the Reddit API, but this is infrequent.
 
-## 3. Create your VM and associated Software
+## 3. Create and Set Up your VM
 
 Have a VM set up with Anaconda Python, VS Code with the SSH extension installed, and th-Create a VM in GCP
 
 #### Create an SSH key on your personal computer in a terminal.
 #### Share the public key with the VM by going to metadata settings and adding the public key.
-#### Create a config file to use to tunnel into the VM in VS Code## 4. Start up the consumer in your virtual machine.
+#### Create a config file to use to tunnel into the VM in VS Code.
+#### Install Anaconda Python in your machine.
 #### Create a role that allows you to pass data to and from Google Storage and BigQuery and download the json credentials to an appropriate place in your VM.
 
 ## 4. Start the consumer in the VM
 
 #### After downloading all files in the project to your VM, run the following command:
 
-nohup python consumer.py configuration.ini &
+*nohup python consumer.py configuration.ini &*
 
 This will run the consumer in the background and start pulling data into parquet files in a google storage bucket. Some important notes:
 
