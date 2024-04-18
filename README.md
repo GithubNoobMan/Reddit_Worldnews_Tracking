@@ -18,8 +18,11 @@ There are many practical applications that this process will mimick. For example
 
 ## Technologies Used
 
-This project is an exercise in using Apache Kafka and Confluent technology, along with Python, VMs, GitHub, BigQuery, and Looker Studio and is a streaming data project.
+This project is an exercise in using Apache Kafka and Confluent technology, along with Python, VMs, GitHub, BigQuery, and Looker Studio and is a streaming data project. 
 
+## Components of Project
+
+This uses a data warehouse, includes multiple transformations and ingestion steps with a raw and refined dataset in BigQuery, in the cloud using streaming data with Kafka/Confluent and instructions for reproducing are below.
 
 Potential future updates include containerizing the whole process, adding in airflow for orchestration, and creating proper unit tests for the process.
 
