@@ -56,7 +56,7 @@ It is expensive to write data to BigQuery in small batches. This can be done if 
 
 This script performs multiple *transformations* on the data to select the data of interest and ensure that we are not bringing in duplicate data, as each API call will return the same article multiple times depending on how frequent the calls are and how many articles are produced.
 
-### 4. Python BQ Upload Script
+### 4. Python BQ Upload Script (collectparquet.py)
 
 This Script takes the parquet files daily, or all at once (I have both options created) and pushes them to BigQuery, a *data warehouse*. There are two tables in the dataset Reddit_Refined. The base metadata table and aggregated time series statistics for trend analysis.
 
