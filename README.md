@@ -89,15 +89,19 @@ Create and app and credentials that will be passed to the producer in Confluent 
 
 ## 2. Confluent Cluster Creation
 
--Sign up at https://www.confluent.io/ for an account that includes a free trial for you to start with. Then, create a basic cluster on your cloud provider of choice and region (does not matter where, but I chose GCP for consistency). 
+#### Sign up at https://www.confluent.io/ for an account that includes a free trial for you to start with. 
 
--Then create an Kafka API Key and then your 'HTTP Source' type Connector.
+Then, create a basic cluster on your cloud provider of choice and region (does not matter where, but I chose GCP for consistency). 
+
+#### Then create an Kafka API Key and then your 'HTTP Source' type Connector.
 
 Here's how you should have your connector set up - note that the html request I am sending has a limit of 50 articles per API request:
 
-IMAGE HERE
+![Cluster_Creation_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/Create_Cluster_Confluent.png)
 
--Create a topic and connect it to your Connector. You can choose one partition because we are using a simple process with only one consumer and one producer.
+#### Create a topic and connect it to your Connector. 
+
+You can choose one partition because we are using a simple process with only one consumer and one producer.
 
 Start the connector running and it should start collecting data. Note that it sometimes returns a failure intermittently due to too many requests to the Reddit API, but this is infrequent.
 
