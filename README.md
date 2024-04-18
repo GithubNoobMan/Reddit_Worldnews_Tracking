@@ -127,4 +127,31 @@ This will take the reddit_raw dataset and transform it into an aggregated time s
 
 This script will create or append to an already created table.
 
-## 6. Create Parquet 
+## 6. Create Looker Studio Vizualizations
+
+-Configure and connect Looker Studio to BigQuery 
+-Bring in the two data tables Article_Data and Aricle_Data_Time_Series
+-Create a line graph and sort the articles by recency. 
+-Update the frequency in the settings to every 15 minutes for refreshing the data.
+
+# Relevant Features of Code
+
+## Consumer.py
+
+### Logging
+
+There is logging and try/except blocks throughout the code that allow for troubleshooting, including info and error logging into google cloud storage.
+
+The logs are datetime stamped so that they are easier to determine if they are relevant to a troubleshooting investigation.
+
+### Data Redundancy Check
+
+The prior_ids stored in google cloud bucket ensure that we don't ingest into parquet files the same news article twice. There is a small chance of failure here if the process fails and the priod_id's are not updated in time.
+
+### Transformations
+
+The Reddit API brings in hundreds of properties per article, and 50 articles per pull. That's a lot of data we don't need. All we need is the id, title, if it has been removed, and timestamp. 
+
+-Pulled out the relevant data from each topic message
+-Ensure that we haven't seen this article ID before
+-Use a counter to ensure we have enough data that it's worth storing in a parquet file
