@@ -24,7 +24,7 @@ This project is an exercise in using Apache Kafka and Confluent technology, alon
 
 This uses a data warehouse, includes multiple transformations and ingestion steps with a raw and refined dataset in BigQuery, in the cloud using streaming data with Kafka/Confluent and instructions for reproducing are below.
 
-Potential future updates include containerizing the whole process, adding in airflow for orchestration, changing from Kafka to the reddit package in Python for costs savings, and creating proper unit tests for the process.
+Potential future updates include containerizing the whole process, adding in airflow for orchestration, changing from Kafka to the reddit package in Python for costs savings, creating global variables to handle things like project_id and dataset names, and creating proper unit tests for the process.
 
 # Data Architecture
 
@@ -123,11 +123,12 @@ Have a VM set up with Anaconda Python, VS Code with the SSH extension installed,
 
 *nohup python consumer.py configuration.ini &*
 
-This will run the consumer in the background and start pulling data into parquet files in a google storage bucket. Some important notes:
+This will run the consumer in the background and start pulling data into parquet files in a google storage bucket. 
 
-** Change the name of the bucket to your bucket **
-** Change the path to your google credential key **
-** Initialize prior_ids/prior_ids.json file in your bucket with an empty dataset **
+Some important actions:
+#### Change the name of the bucket to your bucket 
+#### Change the path to your google credential key 
+#### Initialize prior_ids/prior_ids.json file in your bucket with an empty dataset 
 
 ## 5. Run collectparquet.py
 
