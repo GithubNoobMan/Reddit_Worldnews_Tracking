@@ -77,11 +77,13 @@ Here's a snapshot of that vizualization:
 
 ## 1. Create a Reddit API account. 
 
-Go to https://www.reddit.com/wiki/api/ and follow instructions for creating a reddit account. Choose the option of identifying yourself as a developer for a 'script'. 
+Go to https://www.reddit.com/wiki/api/ and follow instructions for creating a reddit account. Then you can go here https://old.reddit.com/prefs/apps/. 
+
+Choose the option of identifying yourself as a developer for a 'script'. 
 
 ![Create_API_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/create_app_reddit.png)
 
-Then you can go here https://old.reddit.com/prefs/apps/ and create and app and credentials that will be passed to the producer in Confluent so that it can talk to the Reddit API properly. Here's an example of what the credentials look like:
+Create and app and credentials that will be passed to the producer in Confluent so that it can talk to the Reddit API properly. Here's an example of what the credentials look like:
 
 ![Credential_API_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/reddit_api_credentials.png)
 
