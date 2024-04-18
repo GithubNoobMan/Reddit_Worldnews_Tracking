@@ -58,7 +58,7 @@ This script performs multiple *transformations* on the data to select the data o
 
 ### 4. Python BQ Upload Script
 
-This Script takes the parquet files daily, or all at once (I have both options created) and pushes them to BigQuery, a *data warehouse*. There are two datasets - Reddit_Raw and Reddit_Refined. Reddit_Raw contains the base metadata and Reddit_Refined contains the aggregated time series statistics for trend analysis.
+This Script takes the parquet files daily, or all at once (I have both options created) and pushes them to BigQuery, a *data warehouse*. There are two tables in the dataset Reddit_Refined. The base metadata table and aggregated time series statistics for trend analysis.
 
 ### 5. Time Series Aggregator
 
@@ -154,6 +154,8 @@ There is logging and try/except blocks throughout the code that allow for troubl
 
 The logs are datetime stamped so that they are easier to determine if they are relevant to a troubleshooting investigation.
 
+Currently retrieved data is also dumped into bigquery before a failure in the code shuts the script down.
+
 ### Data Redundancy Check
 
 The prior_ids stored in google cloud bucket ensure that we don't ingest into parquet files the same news article twice. There is a small chance of failure here if the process fails and the priod_id's are not updated in time.
@@ -162,6 +164,28 @@ The prior_ids stored in google cloud bucket ensure that we don't ingest into par
 
 The Reddit API brings in hundreds of properties per article, and 50 articles per pull. That's a lot of data we don't need. All we need is the id, title, if it has been removed, and timestamp. 
 
--Pulled out the relevant data from each topic message
--Ensure that we haven't seen this article ID before
--Use a counter to ensure we have enough data that it's worth storing in a parquet file
+#### Pulled out the relevant data from each topic message
+#### Ensure that we haven't seen this article ID before
+#### Use a counter to ensure we have enough data that it's worth storing in a parquet file
+The requirement is for 10 API pings to occur, which occur every 10 minutes, or store results every 100 minutes into a google bucket.
+
+## collectparquet.py
+
+### Downloads data with set prefix
+
+This prefix pulls in *all* data that is relevant and available in parquet files.
+
+### Duplicate protection
+
+Since article title updates are pretty rare, this is a simple and mostly effective way to ensure we don't dump the same news article twice, just in case our redundancy efforts in the consumer failed (say, through a consumer restart).
+
+
+### push_incremental.py
+
+This code will take a daily specific date and only pull in parquet data from that date. This would be the python script to run daily to update the bigquery article_data table.
+
+This code is very similar to the code we see in collectparquet, except the filter is different (includes the date).
+
+### transform_time_series.py
+
+Also a simple script that aggregates the number of columns per hour from the Article_Data table. For this to run daily, a time filter should be put on the BigQuery query based on the current datetime.
