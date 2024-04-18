@@ -143,6 +143,7 @@ This script will create or append to an already created table.
 #### Create a line graph and sort the articles by recency. 
 #### Update the frequency in the settings to every 15 minutes for refreshing the data.
 
+
 # Relevant Features of Code
 
 ## Consumer.py
