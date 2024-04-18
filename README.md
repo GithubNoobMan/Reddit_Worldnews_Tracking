@@ -93,11 +93,13 @@ Create and app and credentials that will be passed to the producer in Confluent 
 
 Then, create a basic cluster on your cloud provider of choice and region (does not matter where, but I chose GCP for consistency). 
 
+![Cluster_Creation_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/Create_Cluster_Confluent.png)
+
 #### Then create an Kafka API Key and then your 'HTTP Source' type Connector.
 
 Here's how you should have your connector set up - note that the html request I am sending has a limit of 50 articles per API request:
 
-![Cluster_Creation_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/Create_Cluster_Confluent.png)
+![Connector_Creation_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/Connector_Settings.png)
 
 #### Create a topic and connect it to your Connector. 
 
