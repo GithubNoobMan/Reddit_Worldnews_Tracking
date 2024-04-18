@@ -37,13 +37,19 @@ Interface with the Reddit API to get data relating to the worldnews subreddit. T
 
 ### 2. Confluent Cluster
 
-Create a confluent produce, cluster, and topic for the worldnews 'new' subscription to see what articles are new every 10 minutes. Confluent and Kafka provide a robust, easy to use way to ingest data in real-time with Confluent dealing with the cluster maintenance and creation while also providing helpful producer and consumer connectors and most recently, Apache Flink capabilities for immediate data transformation and analysis. See this helpful image from Confluent about tbe benefits of Confluent and Kafka.
+Create a confluent produce, cluster, and topic for the worldnews 'new' subscription to see what articles are new every 10 minutes. 
+
+Confluent and Kafka provide a robust, easy to use way to ingest data in real-time with Confluent dealing with the cluster maintenance and creation while also providing helpful producer and consumer connectors. Most recently, Apache Flink capabilities are available in Confluent for immediate data transformation and analysis. 
+
+See this helpful image from Confluent about tbe benefits of Confluent and Kafka.
 
 ![Confluent_Kafka_Propertes](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/kafka-intro.webp)
 
 ### 3. Python Consumer
 
-Create a consumer that reads in messages, collects only the relevant data (article name, timestamp, id, and removed_by status) and pushes results to parquet files on a regular basis. This is because it is expensive to write data to BigQuery in small batches. This can be done if necessary (and is easier) but in this case I wrote an intermediate step to parquet files in a google storage bucket.
+Create a consumer that reads in messages, collects only the relevant data (article name, timestamp, id, and removed_by status) and pushes results to parquet files on a regular basis. 
+
+It is expensive to write data to BigQuery in small batches. This can be done if necessary (and is easier) but in this case I wrote an intermediate step to parquet files in a google storage bucket.
 
 This script performs multiple *transformations* on the data to select the data of interest and ensure that we are not bringing in duplicate data, as each API call will return the same article multiple times depending on how frequent the calls are and how many articles are produced.
 
