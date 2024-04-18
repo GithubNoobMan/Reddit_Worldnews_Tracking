@@ -33,11 +33,13 @@ More detail in later sections, but this is the basic architecture. *This project
 
 ### 1. Reddit API
 
-Interface with the Reddit API to get data relating to the worldnews subreddit.
+Interface with the Reddit API to get data relating to the worldnews subreddit. The Reddit API allows anyone with the initiative to glean lots of information from Reddit, from the hottest articles, comment details, or new articles (as used here). It's a simple, user friendly API that has a dedicated Python package for it (not used here, as the purpose of this project was to use Kafka).
 
 ### 2. Confluent Cluster
 
-Create a confluent produce, cluster, and topic for the worldnews 'new' subscription to see what articles are new every 10 minutes.
+Create a confluent produce, cluster, and topic for the worldnews 'new' subscription to see what articles are new every 10 minutes. Confluent and Kafka provide a robust, easy to use way to ingest data in real-time with Confluent dealing with the cluster maintenance and creation while also providing helpful producer and consumer connectors and most recently, Apache Flink capabilities for immediate data transformation and analysis. See this helpful image from Confluent about tbe benefits of Confluent and Kafka.
+
+![Confluent_Kafka_Propertes](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/kafka-intro.webp)
 
 ### 3. Python Consumer
 
