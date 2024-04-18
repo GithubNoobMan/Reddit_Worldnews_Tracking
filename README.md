@@ -1,5 +1,5 @@
 # Reddit_Worldnews_Tracking
-A project to pull in and ingest reddit worldnews new articles
+A project to pull in and ingest reddit worldnews new articles!
 
 # Project Description
 Reddit is the host of thousands of apps that enable users to see information in a convenient format to what it is that they are interested in. 
