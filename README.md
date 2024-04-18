@@ -70,7 +70,7 @@ Here's a snapshot of that vizualization:
 ![Create_API_Pic](https://github.com/GithubNoobMan/Reddit_Worldnews_Tracking/blob/main/images/DataVizualization.png)
 
 
-# How to Re-create this Project
+# How to Recreate this Project
 
 ## 1. Create a Reddit API account. 
 
